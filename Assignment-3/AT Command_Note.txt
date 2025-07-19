@@ -1,0 +1,78 @@
+AT+CMGF – Select SMS Message Format
+Used to set the SMS format mode.
+Values:
+
+0 = PDU mode (encoded for network)
+
+1 = Text mode (human-readable)
+Example:
+AT+CMGF=1 → OK
+
+--------------------------------------------------------------
+AT+CLIP – Calling Line Identification Presentation
+Enables or disables the display of the caller’s number.
+Values:
+
+0 = Disable caller ID
+
+1 = Enable caller ID
+Example:
+AT+CLIP=1 → OK
+
+--------------------------------------------------------------
+AT+CREG – Network Registration Status
+Checks if the module is registered to a network (2G/3G).
+Response format: +CREG: <n>,<stat>
+Where:
+
+<n> = URC reporting mode (0 to 2)
+
+<stat> = Registration status
+
+0 = Not registered
+
+1 = Registered (home network)
+
+2 = Searching
+
+3 = Registration denied
+
+4 = Unknown
+
+5 = Registered (roaming)
+Example:
+AT+CREG? → +CREG: 1,1
+
+--------------------------------------------------------------
+AT+CPIN? – SIM Card Status
+Checks whether a SIM is present and ready.
+Common responses:
+
++CPIN: READY → SIM is active
+
++CPIN: SIM PIN → SIM requires PIN
+Example:
+AT+CPIN? → +CPIN: READY
+
+--------------------------------------------------------------
+AT+CGMI – Manufacturer Identification
+Displays the manufacturer name of the module or chipset.
+Usually read-only, and supports only execute format.
+Example:
+AT+CGMI → CELER
+
+--------------------------------------------------------------
+ATZ – Reset Command
+Resets the module to its saved configuration profile.
+Useful for clearing temporary settings.
+Example:
+ATZ → OK
+
+--------------------------------------------------------------
+AT – Basic Attention Command
+Used to check communication with the module.
+If successful, returns OK.
+Example:
+AT → OK
+
+--------------------------------------------------------------
